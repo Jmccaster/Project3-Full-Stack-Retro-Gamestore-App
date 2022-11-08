@@ -22,9 +22,9 @@ const mongoose = require("mongoose");
 //Use dotenv to connect to our config file
 dotenv.config();
 
-// Variable that will represnt databse
+// Variable that will represent database
 const DB = mongoose.connect(process.env.MONGO_URI).then(() => {
-  console.log("Connect to database");
+  console.log("Connected to database");
 });
 
 // MIddleware
