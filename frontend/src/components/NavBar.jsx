@@ -2,15 +2,25 @@ import React from "react";
 
 // Import Link for routes
 import { Link } from "react-router-dom";
+import * as userService from "./../utilities/users-service";
 
 // React Bootstrap Components
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function NavBar(user, setUser) {
+function NavBar({ user, setUser }) {
+  // Create a function responsible for login the user out
+  const handleLogOut = async (e) => {
+    // Call the logout function
+    userService.logOut();
+    // Set the user back to null
+    setUser(null);
+  };
+  console.log(user);
   return (
     <nav>
       <Navbar bg="dark" expand="lg" variant="dark">
@@ -49,29 +59,29 @@ function NavBar(user, setUser) {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
+              <Container className="d-flex justify-content-end ms-1">
+                {user ? (
+                  <>
+                    <Navbar.Text>
+                      Welcome {user.newUser?.name || user.currentUser?.name}
+                    </Navbar.Text>
+                    <Nav.Link
+                      to=""
+                      onClick={() => {
+                        return handleLogOut();
+                      }}
+                    >
+                      Log Out
+                    </Nav.Link>
+                  </>
+                ) : (
+                  <Nav.Link as={Link} to="/login" className="mx-auto">
+                    SignUp/Login
+                  </Nav.Link>
+                )}
+              </Container>
             </Nav>
           </Navbar.Collapse>
-        </Container>
-        <Container className="d-flex justify-content-end ms-1">
-          {user ? (
-            <>
-              <Navbar.Text>
-                Welcome {user.newUser?.name || user.currentUser?.name}
-              </Navbar.Text>
-              <Nav.Link
-                to=""
-                onClick={() => {
-                  return handleLogOut();
-                }}
-              >
-                Log Out
-              </Nav.Link>
-            </>
-          ) : (
-            <Nav.Link as={Link} to="/login" className="mx-auto">
-              SignUp/Login
-            </Nav.Link>
-          )}
         </Container>
       </Navbar>
     </nav>
