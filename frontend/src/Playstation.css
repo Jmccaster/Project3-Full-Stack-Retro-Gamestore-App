@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Righteous");
+
+body {
+  background: url(https://wallpaperaccess.com/full/357133.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Righteous", cursive;
+  color: white;
+  background: navy;
+  margin: 0;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
+  background: ghostwhite;
+  border: solid;
+}
+
+a:hover {
+  color: ghostwhite;
+}
+
+li {
+  list-style: none;
+  color: black;
+}
+
+li a {
+  color: black;
+}
+
+li a:hover {
+  color: ghostwhite;
+}
+
+input[type="text"] {
+  padding: 0.3em;
+}
+
+input[type="submit"] {
+  padding: 0.3em;
+  color: black;
+  background: white;
+  font-size: 1em;
+  border-radius: 10%;
+}
