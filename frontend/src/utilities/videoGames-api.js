@@ -12,7 +12,7 @@ export async function allGames() {
   }
 }
 
-export async function eachProduct(platform) {
+export async function eachGame(platform) {
   const res = await fetch(`${BASE_URL}/${platform}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },

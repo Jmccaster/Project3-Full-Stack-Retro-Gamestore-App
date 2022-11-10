@@ -20,7 +20,7 @@ exports.gameData = [
     console: "Original Xbox",
     price: "$5 for Five Days",
     image:
-      "https://lh3.googleusercontent.com/ci/AC_FhM8wwCfRkx2l3aYFfDjYdNz4jAejxSEB75rWCXot2TGI2P4ts92tSzzYobUwAKkJjk57OZt9GHfs",
+      "https://commondatastorage.googleapis.com/images.pricecharting.com/e009ff605de5da20b80f99d70315da1f08167b9376566d144bbff55dd0b23887/240.jpg",
     gameCheckedOut: false,
   },
   {
@@ -29,10 +29,10 @@ exports.gameData = [
     platform: "Playstation",
     description:
       "Tales speak of an ancient realm where Colossi roam the majestic landscape. Bound to the land, these creatures hold a key to a mystical power of revival a power you must obtain to bring a loved one back to life. SHADOW OF THE COLOSSUS is a breathtaking journey through ancient lands to seek out gigantic beasts.",
-    console: "Playstation 2, Playstation, 3, Playstation 4",
+    console: "Playstation 2, Playstation 3, Playstation 4",
     price: "$5 for Five Days",
     image:
-      "https://image.api.playstation.com/vulcan/img/rnd/202010/2319/XtqYrG2LWer39eExYBsh9J5x.png",
+      "https://commondatastorage.googleapis.com/images.pricecharting.com/AMIfv97IFsQQ_rQX7e53u6g56sGHKoJJMR582fMXJO7yGo2dXyanjmAV0R37DBpyDz6-ZhZnvDEMYcRky1SW0BSyagEkK74kaAT7hB3Br89-UA-MtRBO3bzXuYgx7sLS0CELK49fb9exFNyasORIeQYm4xi-d0-_vw/240.jpg",
     gameCheckedOut: false,
   },
 ];

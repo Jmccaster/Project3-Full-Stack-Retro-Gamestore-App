@@ -12,7 +12,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function NavBar({ user, setUser }) {
+function NavBar({ user, setUser, setPlatform }) {
   // Create a function responsible for login the user out
   const handleLogOut = async (e) => {
     // Call the logout function
@@ -20,7 +20,7 @@ function NavBar({ user, setUser }) {
     // Set the user back to null
     setUser(null);
   };
-  console.log(user);
+  // console.log(user);
   return (
     <nav>
       <Navbar bg="dark" expand="lg" variant="dark">
@@ -33,18 +33,38 @@ function NavBar({ user, setUser }) {
             <Nav className="me-auto">
               {/* Platform Dropdown */}
               <NavDropdown title="Platforms" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
+                <NavDropdown.Item
+                  as={Link}
+                  to="/api/videogames/xbox"
+                  onClick={(e) => {
+                    console.log("Target Name Is");
+                    console.log(e.target.name);
+                    return setPlatform(e.target.name);
+                  }}
+                >
                   Xbox Games
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+                <NavDropdown.Item
+                  as={Link}
+                  to="/api/videogames/nintendo"
+                  onClick={(e) => {
+                    console.log("Target Name Is");
+                    console.log(e.target.name);
+                    return setPlatform(e.target.name);
+                  }}
+                >
                   Nintendo Games
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
+                <NavDropdown.Item
+                  as={Link}
+                  to="/api/videogames/playstation"
+                  onClick={(e) => {
+                    console.log("Target Name Is");
+                    console.log(e.target.name);
+                    return setPlatform(e.target.name);
+                  }}
+                >
                   Playstation Games
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
                 </NavDropdown.Item>
               </NavDropdown>
               {/* Consoles Dropdown */}
@@ -53,10 +73,6 @@ function NavBar({ user, setUser }) {
                 <NavDropdown.Item href="#action/3.2">Nintendo</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
                   Playstation
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
                 </NavDropdown.Item>
               </NavDropdown>
               <Container className="d-flex justify-content-end ms-1">
