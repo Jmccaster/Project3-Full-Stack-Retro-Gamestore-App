@@ -1,7 +1,7 @@
 import "./App.css";
 // Import React, Hooks, and any other additional imports needed
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
 
 //Import Pages
@@ -19,7 +19,8 @@ function App() {
       <>
         <NavBar setUser={setUser} user={user} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route
             path="/signup"
             element={<SignUpPage setUser={setUser} user={user} />}

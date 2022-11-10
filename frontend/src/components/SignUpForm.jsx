@@ -54,7 +54,7 @@ const SignUpForm = ({ setUser }) => {
       // Log the data to the console
       console.log(user.data);
       setUser(user.data);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setError("Sign Up Failed - Try Again");
     }

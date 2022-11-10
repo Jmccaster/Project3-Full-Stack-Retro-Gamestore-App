@@ -32,7 +32,7 @@ const LoginForm = ({ setUser }) => {
       // Add the user to state
       console.log(user.data);
       setUser(user.data);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setError(error.message);
     }

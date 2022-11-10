@@ -25,7 +25,7 @@ function NavBar({ user, setUser }) {
     <nav>
       <Navbar bg="dark" expand="lg" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand as={Link} to="/home">
             Retro-Gaming Rental Store
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
