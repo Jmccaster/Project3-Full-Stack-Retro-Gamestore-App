@@ -22,13 +22,20 @@ function Footer() {
           <div className="col">
             <h4>Jibril Links</h4>
             <ul className="list-unstyled">
-              <a href="https://github.com/Jmccaster" style={{ color: "white" }}>
+              <a
+                href="https://github.com/Jmccaster"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
               </a>
               <br />
               <a
                 href="https://www.linkedin.com/in/jibrilmccaster/"
                 style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>

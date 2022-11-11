@@ -7,17 +7,8 @@ import { useParams } from "react-router-dom";
 
 function VideoGamePage() {
   const { platform } = useParams();
-  console.log(platform);
+  // console.log(platform);
   const [eachgame, seteachgame] = useState([]);
-
-  //   const getGames = async (platform) => {
-  //     // const gamedetails = await eachProduct(platformparam);
-  //     const gameDetails = await eachGame(platform);
-  //     // console.log(gamedetails);
-  //     seteachgame({
-  //       list: gameDetails.data.allGames,
-  //     });
-  //   };
 
   //function to fetch game data
   const getGames = async () => {
@@ -30,7 +21,7 @@ function VideoGamePage() {
       console.error(e);
     }
   };
-  console.log(eachgame);
+  // console.log(eachgame);
 
   useEffect(() => {
     getGames(platform);

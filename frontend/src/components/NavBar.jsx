@@ -33,37 +33,13 @@ function NavBar({ user, setUser, setPlatform }) {
             <Nav className="me-auto">
               {/* Platform Dropdown */}
               <NavDropdown title="Platforms" id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  as={Link}
-                  to="/api/videogames/xbox"
-                  onClick={(e) => {
-                    console.log("Target Name Is");
-                    console.log(e.target.name);
-                    return setPlatform(e.target.name);
-                  }}
-                >
+                <NavDropdown.Item as={Link} to="/api/videogames/xbox">
                   Xbox Games
                 </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/api/videogames/nintendo"
-                  onClick={(e) => {
-                    console.log("Target Name Is");
-                    console.log(e.target.name);
-                    return setPlatform(e.target.name);
-                  }}
-                >
+                <NavDropdown.Item as={Link} to="/api/videogames/nintendo">
                   Nintendo Games
                 </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/api/videogames/playstation"
-                  onClick={(e) => {
-                    console.log("Target Name Is");
-                    console.log(e.target.name);
-                    return setPlatform(e.target.name);
-                  }}
-                >
+                <NavDropdown.Item as={Link} to="/api/videogames/playstation">
                   Playstation Games
                 </NavDropdown.Item>
               </NavDropdown>
