@@ -6,6 +6,7 @@ exports.consoleData = [
     platform: "Nintendo",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/d/d1/GameCube-Set.jpg",
+    price: "$10 for Five Days",
     availability: true,
   },
   {
@@ -14,6 +15,7 @@ exports.consoleData = [
       "Microsoft Xbox Console with one controller and all the cords to play. This system and it's accessories are all in great used condition and have been tested and work like new! Package Includes: Original Xbox System Console Power & AV Cords 1 compatible controller. (Color, style and manufacturer may vary based on availability and may differ from picture.)",
     platform: "Xbox",
     image: "https://m.media-amazon.com/images/I/41oALMHapnL.jpg",
+    price: "$10 for Five Days",
     availability: true,
   },
   {
@@ -22,6 +24,7 @@ exports.consoleData = [
       "This original system and all its games and accessories are fully refurbished, cleaned, and tested. 1 Player Pak - Original PS2 console, 1 compatible controller (style may vary), TV hookup, and power cord. Upgrade to original controller is available",
     platform: "Playstation",
     image: "https://i.ebayimg.com/images/g/ImMAAOSwWZlfH6AS/s-l600.jpg",
+    price: "$10 for Five Days",
     availability: true,
   },
 ];

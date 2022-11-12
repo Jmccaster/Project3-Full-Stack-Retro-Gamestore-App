@@ -45,33 +45,16 @@ function NavBar({ user, setUser, setPlatform }) {
               </NavDropdown>
               {/* Consoles Dropdown */}
               <NavDropdown title="Consoles" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Xbox</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Nintendo</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
+                <NavDropdown.Item as={Link} to="/api/consoles/xbox">
+                  Xbox
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/api/consoles/nintendo">
+                  Nintendo
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/api/consoles/playstation">
                   Playstation
                 </NavDropdown.Item>
               </NavDropdown>
-              {/* <Container className="d-flex justify-content-end ms-1">
-                {user ? (
-                  <>
-                    <Navbar.Text>
-                      Welcome {user.newUser?.name || user.currentUser?.name}
-                    </Navbar.Text>
-                    <Nav.Link
-                      to=""
-                      onClick={() => {
-                        return handleLogOut();
-                      }}
-                    >
-                      Log Out
-                    </Nav.Link>
-                  </>
-                ) : (
-                  <Nav.Link as={Link} to="/login" className="mx-auto">
-                    SignUp/Login
-                  </Nav.Link>
-                )}
-              </Container> */}
               {/* SIGN UP LOG IN CART */}
               <div>
                 <Container

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function ConsolePage() {
   const { platform } = useParams();
-  // console.log(platform);
+  console.log(platform);
   const [eachconsole, seteachconsole] = useState([]);
 
   //function to fetch game data
@@ -56,4 +56,4 @@ function ConsolePage() {
   );
 }
 
-export default VideoGamePage;
+export default ConsolePage;
