@@ -1,4 +1,4 @@
-exports.gameData = [
+exports.consoleData = [
   {
     name: "Nintendo Gamecube",
     description:

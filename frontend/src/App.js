@@ -48,8 +48,8 @@ function App() {
           <Route path="/api/videogames" element={<AllGames />} />
           <Route path="/api/videogames/:platform" element={<VideoGamePage />} />
           <Route path="/newgame" element={<CreateGamePage />} />
-          {/* <Route path="/api/consoles" element={<AllConsoles />} />
-          <Route path="/api/consoles/:platform" element={<ConsolePage />} /> */}
+          <Route path="/api/consoles" element={<AllConsoles />} />
+          <Route path="/api/consoles/:platform" element={<ConsolePage />} />
           <Route />
         </Routes>
         <Footer />

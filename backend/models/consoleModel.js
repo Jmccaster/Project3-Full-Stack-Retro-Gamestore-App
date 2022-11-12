@@ -11,6 +11,13 @@ const consoleSchema = mongoose.Schema(
       type: String,
       required: [true],
     },
+    platform: {
+      type: String,
+      trim: true,
+      enum: {
+        values: ["Nintendo", "Xbox", "Playstation"],
+      },
+    },
     price: {
       type: String,
       required: [true],

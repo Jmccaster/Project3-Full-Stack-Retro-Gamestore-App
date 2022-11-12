@@ -34,7 +34,7 @@ exports.getAllConsoles = async (request, response) => {
   }
 };
 
-exports.geConsoles = async (request, response) => {
+exports.getConsoles = async (request, response) => {
   try {
     let category = request.params.platform;
     category = category[0].toUpperCase() + category.slice(1);

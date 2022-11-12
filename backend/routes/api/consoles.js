@@ -7,6 +7,6 @@ const router = express.Router();
 router.route("/seed").post(consoleController.seedConsoles);
 
 router.route("/").get(consoleController.getAllConsoles);
-// router.route("/:platform").get(consoleController.getConsoles);
+router.route("/:platform").get(consoleController.getConsoles);
 
 module.exports = router;
