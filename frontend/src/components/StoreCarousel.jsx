@@ -4,7 +4,7 @@ import { Carousel } from "react-bootstrap";
 function StoreCarousel() {
   return (
     <div style={{ display: "block", width: 900, padding: 20, marginLeft: 210 }}>
-      <h4>React-Bootstrap Carousel Component</h4>
+      <h4>Relive Your Nostalgia Here!!!!</h4>
       <Carousel>
         <Carousel.Item interval={5000}>
           <img

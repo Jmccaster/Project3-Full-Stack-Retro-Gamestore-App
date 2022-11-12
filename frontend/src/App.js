@@ -4,19 +4,25 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
 
+// Import Components
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
 //Import Pages
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
-import NavBar from "./components/NavBar";
 import VideoGamePage from "./pages/VideoGamePage";
-import Footer from "./components/Footer";
 import AllGames from "./pages/AllGames";
+import CreateGamePage from "./pages/CreateGamePage";
+import AllConsoles from "./pages/AllConsoles";
+import ConsolePage from "./pages/ConsolePage";
 
 function App() {
   // Variable to hold the state of App component
   const [user, setUser] = useState(getUser());
   const [platform, setPlatform] = useState({});
+  const [consoleplatform, setConsolePlatform] = useState({});
 
   const params = useParams();
   const platformParams = params.platform;
@@ -41,6 +47,10 @@ function App() {
           />
           <Route path="/api/videogames" element={<AllGames />} />
           <Route path="/api/videogames/:platform" element={<VideoGamePage />} />
+          <Route path="/newgame" element={<CreateGamePage />} />
+          {/* <Route path="/api/consoles" element={<AllConsoles />} />
+          <Route path="/api/consoles/:platform" element={<ConsolePage />} /> */}
+          <Route />
         </Routes>
         <Footer />
       </>

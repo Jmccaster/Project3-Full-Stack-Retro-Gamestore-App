@@ -51,7 +51,7 @@ function NavBar({ user, setUser, setPlatform }) {
                   Playstation
                 </NavDropdown.Item>
               </NavDropdown>
-              <Container className="d-flex justify-content-end ms-1">
+              {/* <Container className="d-flex justify-content-end ms-1">
                 {user ? (
                   <>
                     <Navbar.Text>
@@ -71,7 +71,42 @@ function NavBar({ user, setUser, setPlatform }) {
                     SignUp/Login
                   </Nav.Link>
                 )}
-              </Container>
+              </Container> */}
+              {/* SIGN UP LOG IN CART */}
+              <div>
+                <Container
+                  className="d-flex justify-content-end ms-1"
+                  style={{ paddingLeft: 400 }}
+                >
+                  {user ? (
+                    <>
+                      <Navbar.Text>
+                        Welcome {user.newUser?.name || user.currentUser?.name}
+                      </Navbar.Text>
+                      <Nav.Link
+                        to=""
+                        onClick={() => {
+                          return handleLogOut();
+                        }}
+                      >
+                        Log Out
+                      </Nav.Link>
+                    </>
+                  ) : (
+                    <Nav.Link as={Link} to="/login" className="mx-auto">
+                      SignUp/Login
+                    </Nav.Link>
+                  )}
+                  <Nav.Link>
+                    <img
+                      src="https://static.vecteezy.com/system/resources/previews/004/999/463/original/shopping-cart-icon-illustration-free-vector.jpg"
+                      width="25px"
+                      height="25px"
+                    />
+                  </Nav.Link>
+                  {/* <Navbar.Text>{cart.length}</Navbar.Text> */}
+                </Container>
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>

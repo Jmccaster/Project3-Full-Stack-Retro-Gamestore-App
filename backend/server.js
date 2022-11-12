@@ -24,6 +24,8 @@ const userRouter = require("./routes/api/users");
 
 const videoGameRouter = require("./routes/api/videoGames");
 
+const consoleRouter = require("./routes/api/consoles");
+
 //Use dotenv to connect to our config file
 dotenv.config();
 
@@ -40,6 +42,7 @@ app.use(express.json());
 
 app.use("/api/users", userRouter);
 app.use("/api/videogames", videoGameRouter);
+app.use("/api/consoles", consoleRouter);
 
 app.all("*", (request, response) => {
   response.send("Undefined route");
