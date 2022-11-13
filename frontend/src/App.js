@@ -17,12 +17,14 @@ import AllGames from "./pages/AllGames";
 import CreateGamePage from "./pages/CreateGamePage";
 import AllConsoles from "./pages/AllConsoles";
 import ConsolePage from "./pages/ConsolePage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   // Variable to hold the state of App component
   const [user, setUser] = useState(getUser());
   const [platform, setPlatform] = useState({});
   const [consoleplatform, setConsolePlatform] = useState({});
+  const [cart, setCart] = useState([]);
 
   const params = useParams();
   const platformParams = params.platform;
@@ -50,6 +52,10 @@ function App() {
           <Route path="/newgame" element={<CreateGamePage />} />
           <Route path="/api/consoles" element={<AllConsoles />} />
           <Route path="/api/consoles/:platform" element={<ConsolePage />} />
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} setCart={setCart} />}
+          />
           <Route />
         </Routes>
         <Footer />

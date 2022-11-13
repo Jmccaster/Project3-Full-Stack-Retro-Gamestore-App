@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { allGames } from "../utilities/videoGames-services";
 
-function Create() {
+function Create({ setGame }) {
   //Create states for create video game component.
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
@@ -12,6 +12,7 @@ function Create() {
   const [platform, setPlatform] = useState("");
   const [image, setImage] = useState("");
   const [gameCheckedOut, setGameCheckedOut] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   //// Create a handle change method to keep track of changes inside the form
@@ -36,6 +37,9 @@ function Create() {
   const handleGameCheckedOutChange = (e) => {
     setGameCheckedOut(e.target.value);
   };
+  const handleErrorChange = (e) => {
+    setError(e.target.value);
+  };
 
   // Create a function to handle form submission
   const handleFormSubmission = async (e) => {
@@ -49,21 +53,23 @@ function Create() {
       console,
       platform,
       image,
-      availability,
+      gameCheckedOut,
+      error,
     };
     try {
       // Make a copy of our data
+      console.log(state);
       const gameData = { ...state };
 
-      delete gameData["confirm"];
       delete gameData["error"];
+      console.log(gameData);
 
       // Send the data to our backend
       const game = await allGames(gameData);
 
       // Log the data to the console
       console.log(game.data);
-      // setUser(user.data);
+      setGame(game.data);
       navigate(`/api/videogames/${platform}`);
     } catch (error) {
       setError("Failed - Try Again");
@@ -71,7 +77,7 @@ function Create() {
   };
 
   return (
-    <div class="form-wrapper">
+    <div className="form-wrapper">
       <Form
         className="gameForm"
         autoComplete="on"
