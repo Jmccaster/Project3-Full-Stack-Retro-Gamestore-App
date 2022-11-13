@@ -1,6 +1,34 @@
 const Games = require("../../models/videoGamesModel");
 const data = require("../../data/videoGameData");
 
+exports.createGame = async (request, response) => {
+  try {
+    // Create new game
+    const currentGame = await Games.create({
+      title: request.body.title,
+      genre: request.body.genre,
+      description: request.body.description,
+      console: request.body.console,
+      platform: request.body.platform,
+      image: request.body.image,
+      gameCheckedOut: request.body.gameCheckedOut,
+    });
+
+    // Send JSON RESPONSE
+    response.status(201).json({
+      status: "success",
+      data: {
+        currentGame,
+      },
+    });
+  } catch (error) {
+    response.status(500).json({
+      status: "error",
+      error: error,
+    });
+  }
+};
+
 exports.seedGames = async (request, response) => {
   try {
     await Games.remove({});

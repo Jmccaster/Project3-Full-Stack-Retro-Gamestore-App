@@ -1,10 +1,10 @@
 import React from "react";
-import Create from "../components/Create";
+import CreateGame from "../components/CreateGame";
 
 function CreateGamePage() {
   return (
     <div>
-      <Create />
+      <CreateGame />
     </div>
   );
 }

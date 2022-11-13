@@ -4,6 +4,7 @@ import { eachGame } from "../utilities/videoGames-services";
 import { Card, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function VideoGamePage() {
   const { platform } = useParams();
@@ -51,7 +52,9 @@ function VideoGamePage() {
   });
   return (
     <div>
-      {" "}
+      <Button as={Link} to="/newgame" style={{ marginTop: 20 }} variant="info">
+        Add New Game
+      </Button>
       <Container className="d-flex p-3 justify-content-evenly flex-wrap">
         {gameList}
       </Container>
