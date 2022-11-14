@@ -10,6 +10,7 @@ exports.createGame = async (request, response) => {
       description: request.body.description,
       console: request.body.console,
       platform: request.body.platform,
+      price: request.body.price,
       image: request.body.image,
       gameCheckedOut: request.body.gameCheckedOut,
     });

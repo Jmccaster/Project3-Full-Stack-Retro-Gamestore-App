@@ -14,7 +14,7 @@ function StoreCarousel() {
           />
           <Carousel.Caption>
             <h3>Xbox Collection</h3>
-            <p>Sample Text for Image One</p>
+            <p></p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5000}>
@@ -26,7 +26,7 @@ function StoreCarousel() {
           />
           <Carousel.Caption>
             <h3>Nintendo Collection</h3>
-            <p>Sample Text for Image Two</p>
+            <p></p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5000}>
@@ -38,9 +38,7 @@ function StoreCarousel() {
 
           <Carousel.Caption>
             <h3>Playstation Collection</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <p></p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

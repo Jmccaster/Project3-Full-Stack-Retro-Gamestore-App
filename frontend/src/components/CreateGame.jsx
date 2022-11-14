@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { allGames } from "../utilities/videoGames-services";
+import { createGame } from "../utilities/videoGames-services";
 
-function Create({ setGame }) {
+function Create() {
   //Create states for create video game component.
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
@@ -11,7 +11,8 @@ function Create({ setGame }) {
   const [console, setConsole] = useState("");
   const [platform, setPlatform] = useState("");
   const [image, setImage] = useState("");
-  const [gameCheckedOut, setGameCheckedOut] = useState("");
+  const [price, setPrice] = useState("");
+  const [gameCheckedOut, setGameCheckedOut] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -34,8 +35,11 @@ function Create({ setGame }) {
   const handleImageChange = (e) => {
     setImage(e.target.value);
   };
-  const handleGameCheckedOutChange = (e) => {
-    setGameCheckedOut(e.target.value);
+  const handlePriceChange = (e) => {
+    setPrice(e.target.value);
+  };
+  const handleGameCheckedOutChange = () => {
+    setGameCheckedOut(!gameCheckedOut);
   };
   const handleErrorChange = (e) => {
     setError(e.target.value);
@@ -52,26 +56,26 @@ function Create({ setGame }) {
       description,
       console,
       platform,
+      price,
       image,
       gameCheckedOut,
-      error,
     };
+
     try {
       // Make a copy of our data
-      console.log(state);
+      // console.log(state);
       const gameData = { ...state };
 
-      delete gameData["error"];
-      console.log(gameData);
+      // console.log(gameData);
 
       // Send the data to our backend
-      const game = await allGames(gameData);
+      const game = await createGame(gameData);
 
       // Log the data to the console
-      console.log(game.data);
-      setGame(game.data);
+      // console.log(game.data);
       navigate(`/api/videogames/${platform}`);
     } catch (error) {
+      // alert(error);
       setError("Failed - Try Again");
     }
   };
@@ -138,6 +142,19 @@ function Create({ setGame }) {
           />
         </Form.Group>
         <Form.Group className="mb-3">
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter price"
+            name="price"
+            onChange={(e) => {
+              return handlePriceChange(e);
+            }}
+            value={price}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
           <Form.Label>Platform</Form.Label>
           <Form.Control
             type="text"
@@ -174,7 +191,7 @@ function Create({ setGame }) {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit" value="Create Game">
+        <Button variant="primary" type="submit">
           Submit
         </Button>
       </Form>

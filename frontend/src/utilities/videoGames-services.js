@@ -10,3 +10,9 @@ export async function eachGame(platform) {
   console.log(response);
   return response;
 }
+
+export async function createGame(gameData) {
+  const response = await videoGamesAPI.createGame(gameData);
+  console.log(response);
+  return response;
+}
