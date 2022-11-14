@@ -9,5 +9,6 @@ router.route("/seed").post(videoGameController.seedGames);
 router.route("/").post(videoGameController.createGame);
 router.route("/").get(videoGameController.getAllGames);
 router.route("/:platform").get(videoGameController.getGames);
+router.route("/:gameId").delete(videoGameController.deleteGame);
 
 module.exports = router;

@@ -82,3 +82,25 @@ exports.getGames = async (request, response) => {
     });
   }
 };
+
+exports.deleteGame = async (request, response) => {
+  try {
+    const deletedGame = await Games.findByIdAndRemove(
+      request.params.gameId,
+      request.body
+    );
+    // Send JSON RESPONSE
+    response.status(201).json({
+      status: "success",
+      data: {
+        deletedGame,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    response.status(500).json({
+      status: "error",
+      error: error,
+    });
+  }
+};

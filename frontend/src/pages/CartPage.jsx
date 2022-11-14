@@ -11,29 +11,24 @@ function CartPage({ cart, setCart }) {
     console.log("load payment data", paymentData);
   }
   const handleRemove = (element) => {
-    const arr = cart.filter((item) => item.name !== element.name);
+    const arr = cart.filter((item) => item.title !== game.title);
     setCart(arr);
   };
 
   const navigate = useNavigate();
   const id = getUserId();
-  const productList = cart
-    ? cart.map((element) => {
+  const gameList = cart
+    ? cart.map((game) => {
         return (
           <>
             <div className="cartcomponents">
-              {/* <button className="cartbutton" onClick={() => handleChange(element, -1)}>-</button> */}
-              <div className="cartnamedisplay">{element.name}</div>
-              <div>{element.color}</div>
-              <div>${element.price}</div>
-              {/* <button className="cartbutton" onClick={() => handleChange(element, 1)}>+</button> */}
-              <button
-                className="cartbutton"
-                onClick={() => handleRemove(element)}
-              >
+              <div className="cartnamedisplay">{game.title}</div>
+              <div>{game.console}</div>
+              <div>${game.price}</div>
+
+              <button className="cartbutton" onClick={() => handleRemove(game)}>
                 Remove
               </button>
-              {/* <a style={}>Delete</a> */}
 
               <br />
             </div>
@@ -57,11 +52,11 @@ function CartPage({ cart, setCart }) {
         <h4> </h4>
         <br />
         <div>
-          <div>{productList}</div>
+          <div>{gameList}</div>
         </div>
         <h2>
           Total Price: $
-          {cart.reduce((total, element) => total + parseInt(element.price), 0)}
+          {cart.reduce((total, game) => total + parseInt(game.price), 0)}
         </h2>
         <br /> <br />
         <a href="/payments" className="button">
@@ -89,7 +84,7 @@ function CartPage({ cart, setCart }) {
         <h4> </h4>
         <br />
         <div>
-          <div>{productList}</div>
+          <div>{gameList}</div>
         </div>
         <h2>Cart is empty</h2>
         <br /> <br />

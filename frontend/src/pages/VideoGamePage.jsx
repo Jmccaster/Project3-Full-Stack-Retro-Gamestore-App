@@ -5,11 +5,13 @@ import { Card, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-function VideoGamePage() {
+function VideoGamePage({ cart, setCart }) {
   const { platform } = useParams();
   // console.log(platform);
   const [eachgame, seteachgame] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   //function to fetch game data
   const getGames = async () => {
@@ -26,26 +28,42 @@ function VideoGamePage() {
 
   useEffect(() => {
     getGames(platform);
-  }, [platform]);
+  }, [platform, refresh]);
 
-  const gameList = eachgame.map((element) => {
+  const deleteGame = (id) => {
+    axios.delete(`/api/videogames/${id}`);
+    setRefresh(!refresh);
+  };
+
+  const gameList = eachgame.map((game) => {
     return (
-      <Card style={{ width: "17rem" }} key={element._id} className="m-5">
-        <Card.Img variant="top" src={`${element.image}`} />
+      <Card style={{ width: "17rem" }} key={game._id} className="m-5">
+        <Card.Img variant="top" src={`${game.image}`} />
         <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-          <Card.Title>{element.title}</Card.Title>
-          <Card.Text>{element.genre}</Card.Text>
-          <Card.Text>{element.console}</Card.Text>
-          <Card.Text>{element.price}</Card.Text>
-          <Button
-            variant="info"
-            onClick={() => {
-              setCart([...cart, element]);
-              console.log(cart);
-            }}
-          >
-            Add to Cart
-          </Button>
+          <Card.Title>{game.title}</Card.Title>
+          <Card.Text>{game.genre}</Card.Text>
+          <Card.Text>{game.console}</Card.Text>
+          <Card.Text>{game.price}</Card.Text>
+          <Container className="d-flex flex-row justify-content-center align-items-center">
+            <Button
+              variant="info"
+              onClick={() => {
+                setCart([...cart, game]);
+                console.log(cart);
+              }}
+            >
+              Add to Cart
+            </Button>
+            <Button
+              onClick={() => {
+                deleteGame(game._id);
+              }}
+              style={{ marginLeft: 5 }}
+              variant="info"
+            >
+              Delete Game
+            </Button>
+          </Container>
         </Card.Body>
       </Card>
     );

@@ -26,17 +26,17 @@ function ConsolePage() {
     getConsoles(platform);
   }, [platform]);
 
-  const consoleList = eachconsole.map((element) => {
+  const consoleList = eachconsole.map((console) => {
     return (
-      <Card style={{ width: "17rem" }} key={element._id} className="m-5">
-        <Card.Img variant="top" src={`${element.image}`} />
+      <Card style={{ width: "17rem" }} key={console._id} className="m-5">
+        <Card.Img variant="top" src={`${console.image}`} />
         <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-          <Card.Title>{element.name}</Card.Title>
-          <Card.Text>{element.price}</Card.Text>
+          <Card.Title>{console.name}</Card.Title>
+          <Card.Text>{console.price}</Card.Text>
           <Button
             variant="info"
             onClick={() => {
-              setCart([...cart, element]);
+              setCart([...cart, console]);
               console.log(cart);
             }}
           >

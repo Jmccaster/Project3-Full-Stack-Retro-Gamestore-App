@@ -21,18 +21,18 @@ function AllGames() {
   //   console.log(games.list);
 
   const gameList = games.list
-    ? games.list.map((element) => {
+    ? games.list.map((game) => {
         return (
-          <Card style={{ width: "17rem" }} key={element._id} className="m-5">
-            <Card.Img variant="top" src={element.image} />
+          <Card style={{ width: "17rem" }} key={game._id} className="m-5">
+            <Card.Img variant="top" src={game.image} />
             <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-              <Card.Title>{element.title}</Card.Title>
-              <Card.Text>{element.genre}</Card.Text>
-              <Card.Text>{element.console}</Card.Text>
+              <Card.Title>{game.title}</Card.Title>
+              <Card.Text>{game.genre}</Card.Text>
+              <Card.Text>{game.console}</Card.Text>
               <Button
                 variant="info"
                 onClick={() => {
-                  setCart([...cart, element]);
+                  setCart([...cart, game]);
                   console.log(cart);
                 }}
               >

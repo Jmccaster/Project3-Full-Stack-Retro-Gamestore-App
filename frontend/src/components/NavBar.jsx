@@ -12,7 +12,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function NavBar({ user, setUser, setPlatform }) {
+function NavBar({ user, setUser, setPlatform, cart }) {
   // Create a function responsible for login the user out
   const handleLogOut = async (e) => {
     // Call the logout function
@@ -80,7 +80,7 @@ function NavBar({ user, setUser, setPlatform }) {
                       SignUp/Login
                     </Nav.Link>
                   )}
-                  <Nav.Link>
+                  <Nav.Link as={Link} to="/cart">
                     <img
                       src="https://static.vecteezy.com/system/resources/previews/004/999/463/original/shopping-cart-icon-illustration-free-vector.jpg"
                       width="25px"
