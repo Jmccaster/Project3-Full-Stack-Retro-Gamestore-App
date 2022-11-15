@@ -1,0 +1,7 @@
+Improvements and Add-On Features:
+1. Console CRUD
+2. Stores for individual users
+3. Improve CSS
+4. User Profiles
+5. Detail Page for games/consoles/users
+6. Improve Cart Page
