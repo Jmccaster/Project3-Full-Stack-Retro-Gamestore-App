@@ -36,3 +36,18 @@ export async function createGame(gameData) {
     throw new Error("Invalid");
   }
 }
+
+export async function editGame(gameData, gameId) {
+  const res = await fetch(`${BASE_URL}/${gameId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gameData),
+  });
+  if (res.ok) {
+    console.log("api1");
+    return res.json();
+  } else {
+    console.log("api2");
+    throw new Error("Invalid");
+  }
+}

@@ -16,3 +16,10 @@ export async function createGame(gameData) {
   console.log(response);
   return response;
 }
+
+export async function editGame(gameData, gameId) {
+  console.log("service");
+  const response = await videoGamesAPI.editGame(gameData, gameId);
+  console.log(response);
+  return response;
+}

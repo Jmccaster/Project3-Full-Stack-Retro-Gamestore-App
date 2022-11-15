@@ -64,6 +64,21 @@ exports.getAllGames = async (request, response) => {
   }
 };
 
+exports.getOneGame = async (request, response) => {
+  try {
+    const getOneGame = await Games.findById(request.params.gameId).exec();
+    response.status(200).json({
+      status: "success",
+      data: getOneGame,
+    });
+  } catch (error) {
+    response.status(404).json({
+      status: "error",
+      error: error,
+    });
+  }
+};
+
 exports.getGames = async (request, response) => {
   try {
     let category = request.params.platform;
@@ -77,6 +92,29 @@ exports.getGames = async (request, response) => {
     });
   } catch (error) {
     response.status(404).json({
+      status: "error",
+      error: error,
+    });
+  }
+};
+
+exports.updateGame = async (request, response) => {
+  try {
+    const updateGame = await Games.findByIdAndUpdate(
+      request.params.gameId,
+      request.body
+    );
+    // Send JSON RESPONSE
+    response.status(201).json({
+      status: "success",
+      data: {
+        updateGame,
+      },
+    });
+    console.log("controller");
+  } catch (error) {
+    console.log(error);
+    response.status(500).json({
       status: "error",
       error: error,
     });

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { eachGame } from "../utilities/videoGames-services";
 import { Card, Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
@@ -44,7 +43,7 @@ function VideoGamePage({ cart, setCart }) {
           <Card.Text>{game.genre}</Card.Text>
           <Card.Text>{game.console}</Card.Text>
           <Card.Text>{game.price}</Card.Text>
-          <Container className="d-flex flex-row justify-content-center align-items-center">
+          <Container className="d-flex flex-column justify-content-center align-items-center">
             <Button
               variant="info"
               onClick={() => {
@@ -58,10 +57,18 @@ function VideoGamePage({ cart, setCart }) {
               onClick={() => {
                 deleteGame(game._id);
               }}
-              style={{ marginLeft: 5 }}
+              style={{ marginTop: 5 }}
               variant="info"
             >
-              Delete Game
+              Delete
+            </Button>
+            <Button
+              as={Link}
+              to={`/api/videogames/edit/${game._id}`}
+              style={{ marginTop: 5 }}
+              variant="info"
+            >
+              Edit
             </Button>
           </Container>
         </Card.Body>
