@@ -191,7 +191,7 @@ function Create() {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="info" type="submit" style={{ marginBottom: 5 }}>
           Submit
         </Button>
       </Form>

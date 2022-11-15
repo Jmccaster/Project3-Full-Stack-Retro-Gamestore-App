@@ -5,3 +5,5 @@ Improvements and Add-On Features:
 4. User Profiles
 5. Detail Page for games/consoles/users
 6. Improve Cart Page
+7. Input a link to what price of the game would be if you bought it.
+8. About Page

@@ -192,7 +192,7 @@ function EditGame({ game }) {
             required
           />
         </Form.Group>
-        <Button variant="info" type="submit">
+        <Button variant="info" type="submit" style={{ marginBottom: 5 }}>
           Submit
         </Button>
       </Form>
